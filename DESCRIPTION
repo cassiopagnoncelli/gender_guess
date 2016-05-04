@@ -1,10 +1,10 @@
 Package: genderguess
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Gender guess
 Version: 0.1
 Date: 2016-05-04
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Cassio Jandir Pagnoncelli
+Maintainer: cassiopagnoncelli@gmail.com
+Description: Given a name, it guesses their gender.
+License: MIT
 LazyData: TRUE
