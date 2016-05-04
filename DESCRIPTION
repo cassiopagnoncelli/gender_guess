@@ -3,8 +3,9 @@ Type: Package
 Title: Gender guess
 Version: 0.1
 Date: 2016-05-04
-Author: Cassio Jandir Pagnoncelli
-Maintainer: cassiopagnoncelli@gmail.com
+Author: Cassio Jandir Pagnoncelli <cassiopagnoncelli@gmail.com>
+Maintainer: Cassio Jandir Pagnoncelli <cassiopagnoncelli@gmail.com>
 Description: Given a name, it guesses their gender.
+Depends: randomForest, rpart, e1071, nnet, jsonlite
 License: MIT
 LazyData: TRUE

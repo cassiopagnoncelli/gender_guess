@@ -21,7 +21,13 @@ assertLoad('rpart')
 assertLoad('e1071')
 assertLoad('nnet')
 
-# Gender guessing classifier.
+#' Gender
+#'
+#' Guess the gender of a person
+#'
+#' @param names A vector of names
+#' @return A factor indicating whether names are m/f
+#' @export
 gender_guess <- function(names) {
   # Validate inputs.
   if (!is.vector(names) || !(class(gender_guess_fit) %in% 'gender_ensemble')) {

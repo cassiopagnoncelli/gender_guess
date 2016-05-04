@@ -50,28 +50,3 @@ gender_guess_train <- function(names, y, include.results = F) {
 
   return (gfit)
 }
-
-# Train using names in the sqlite database.
-assertLoad('RSQLite')
-
-driver <- dbDriver('SQLite')
-conn <- dbConnect(driver, 'names.db')
-
-tbl_sql <- dbSendQuery(conn, "SELECT * FROM names;")
-tbl <- dbFetch(tbl_sql, n=count)
-dbClearResult(tbl_sql)
-
-dbDisconnect(conn)
-dbUnloadDriver(driver)
-
-gender_guess_fit <- gender_guess_train(tbl$name, tbl$gender, T)
-save(gender_guess_fit, file='fit.RData')
-
-# Result.
-cm <- table(train_y, fit$result)
-cat(paste(
-  "Error rate (training phase): ",
-  round(100*(1 - sum(diag(cm) / sum(cm))), 3),
-  "%",
-  sep=""
-))
