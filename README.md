@@ -2,6 +2,13 @@
 
 __gender__ is an R library to guess gender given a name and is part of a data enrichment suite.
 
+## Installation
+
+```python
+library('devtools')
+install_github('cassiopagnoncelli/genderguess')
+```
+
 ## Usage
 
 A call
