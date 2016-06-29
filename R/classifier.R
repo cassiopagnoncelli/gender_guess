@@ -36,6 +36,9 @@ gender_guess <- function(names) {
     return(F)
   }
 
+  # Data cleansing
+  names <- gsub('\t', '', names)
+
   # Data normalisation.
   padding <- c('Renan', 'Carla', 'Zuleika')
   input_names <- append(names, padding)
