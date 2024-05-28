@@ -1,6 +1,6 @@
 ## Synopsis
 
-__gender__ is an R library to guess gender given a name and is part of a data enrichment suite.
+__gender_guess__ is an R library to guess gender given a name and is part of a data enrichment suite.
 
 ## Installation
 
@@ -11,10 +11,14 @@ install_github('cassiopagnoncelli/gender_guess')
 
 ## Usage
 
-A call
+`gender_guess` offers a way to infer genders based on names suffixes.
+`gender` is a wrapper to produce responses from/to JSON.
 
 ```r
-> # As JSON
+> gender_guess("Cassio")
+1 
+m 
+Levels: f m
 > gender('{"names":[
   "Cássius",
   "g4BRIéL",
@@ -25,11 +29,6 @@ A call
   "NAARA Katheline Cilva",
   "SaMAnTa Fyorrentin"
 ]}')
-```
-
-would fetch a response
-
-```r
 ["m","m","f","f","m","m","f","f"] 
 ```
 
