@@ -1,12 +1,12 @@
 ## Synopsis
 
-__gender_guess__ is an R library to guess gender given a name and is part of a data enrichment suite.
+__genderguess__ is an R library to guess gender given a name and is part of a data enrichment suite.
 
 ## Installation
 
 ```python
 library('devtools')
-install_github('cassiopagnoncelli/gender_guess')
+install_github('cassiopagnoncelli/genderguess')
 ```
 
 ## Usage
