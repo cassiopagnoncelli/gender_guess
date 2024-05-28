@@ -1,6 +1,4 @@
-source('R/classifier.R')
-
-assertLoad('jsonlite')
+library("jsonlite")
 
 gender <- function(names, input_format='json', output_format='json') {
   if (input_format == 'raw')
@@ -12,5 +10,5 @@ gender <- function(names, input_format='json', output_format='json') {
   if (output_format == 'raw')
     return (classes)
   else
-    return(toJSON(classes))
+    return(jsonlite::toJSON(classes))
 }

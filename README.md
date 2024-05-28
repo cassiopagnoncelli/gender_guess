@@ -13,14 +13,14 @@ install_github('cassiopagnoncelli/genderguess')
 
 A call
 
-```python
+```r
 > # As JSON
 > gender('{"names":[
-  "Cássius P4GN0NC3LL1 ",
-  "g4BRIéL    Francysco",
-  "EduArda Kart",
-  "Geyzebel SanThiago Cardoso",
-  "JULIAN CERRANO DaLLAsha",
+  "Cássius",
+  "g4BRIéL",
+  "EduArda",
+  "Geyzebel Cardoso",
+  "JULIAN",
   "  Pritham-Kumar Bora Bora",
   "NAARA Katheline Cilva",
   "SaMAnTa Fyorrentin"
@@ -29,7 +29,7 @@ A call
 
 would fetch a response
 
-```python
+```r
 ["m","m","f","f","m","m","f","f"] 
 ```
 
@@ -48,7 +48,7 @@ This model is a two-tier layer casting a voters-judge architecture.
 (Individual voters average a hit rate of 80-85%.)
 3. **Second layer** phase: Given individual votes for each classifier, an aggregator classifier, hereby called judge, decides, based on votes, which should be the gender for the given name. (Classication hit rate soars to over 97% out of individual classifiers.)
 
-<img src="http://s18.postimg.org/lohnlhe8p/gender.png" />
+![Diagram](./assets/gender.png)
 
 ## Caveats
 
