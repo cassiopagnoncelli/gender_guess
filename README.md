@@ -13,7 +13,7 @@ install_github('cassiopagnoncelli/genderguess')
 
 A call
 
-```python
+```r
 > # As JSON
 > gender('{"names":[
   "Cássius",
@@ -29,7 +29,7 @@ A call
 
 would fetch a response
 
-```python
+```r
 ["m","m","f","f","m","m","f","f"] 
 ```
 

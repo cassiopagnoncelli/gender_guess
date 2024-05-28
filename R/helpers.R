@@ -1,13 +1,3 @@
-# Enforce a library loading by installing it should it is not installed yet.
-assertLoad <- function(lib) {
-  if (!(lib %in% rownames(installed.packages())))
-    install.packages(lib, repos="http://cran.r-project.org")
-  suppressMessages(eval(parse(text=paste('library(', lib, ')', sep=''))))
-}
-
-# Libraries.
-assertLoad('stringr')
-
 # All possible letters a classifier can handle.
 alphabet <- c(
   ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
@@ -16,14 +6,14 @@ alphabet <- c(
 
 # Transliterate names.
 transliterate <- function(names) {
-  first_names <- str_replace(names, "[- ][[:print:]]*", '')
-  
+  first_names <- stringr::str_replace(names, "[- ][[:print:]]*", '')
+
   pre_latin <- gsub("[^[:alpha:][:space:]']", "", first_names)
   latinised <- gsub("[[:punct:]]", "", pre_latin)
-  
+
   lowercased <- tolower(iconv(latinised, to="ASCII//TRANSLIT"))
-  
-  str_pad(lowercased, 5, side='left', pad=' ')
+
+  stringr::str_pad(lowercased, 5, side='left', pad=' ')
 }
 
 # Calculate *normalized*, reversed x.
@@ -44,11 +34,11 @@ calcrev <- function(x) {
 normalise_data <- function(x) {
   revsuffix <- calcrev(x)
   data.frame(
-    n0 = factor(substr(revsuffix, 1, 1), levels=alphabet),
-    n1 = factor(substr(revsuffix, 2, 2), levels=alphabet),
-    n2 = factor(substr(revsuffix, 3, 3), levels=alphabet),
-    n3 = factor(substr(revsuffix, 4, 4), levels=alphabet),
-    n4 = factor(substr(revsuffix, 5, 5), levels=alphabet)
+    n0 = factor(substr(revsuffix, 1, 1), levels = alphabet),
+    n1 = factor(substr(revsuffix, 2, 2), levels = alphabet),
+    n2 = factor(substr(revsuffix, 3, 3), levels = alphabet),
+    n3 = factor(substr(revsuffix, 4, 4), levels = alphabet),
+    n4 = factor(substr(revsuffix, 5, 5), levels = alphabet)
   )
 }
 
@@ -65,6 +55,6 @@ prediction_normalisation <- function(pred, n, type) {
     pred_tree <- factor(pred_tree, levels=c('m', 'f'))
     pred <- pred_tree
   }
-  
+
   return (pred)
 }
