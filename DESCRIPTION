@@ -8,8 +8,6 @@ Authors@R:
     person("Cassio", "Pagnoncelli", , "cassiopagnoncelli@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0000-7114-7008"))
 Date: 2024-05-28
-Author: Cassio Jandir Pagnoncelli <cassiopagnoncelli@gmail.com>
-Maintainer: Cassio Jandir Pagnoncelli <cassiopagnoncelli@gmail.com>
 Description: Given a name, it guesses their gender.
 Depends:
     R (>= 4.4.0)
